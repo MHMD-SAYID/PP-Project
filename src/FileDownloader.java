@@ -1,4 +1,49 @@
-import java.io.*;
+/*import java.io.*;
+import java.net.URL;
+import java.util.Scanner;
+
+public class FileDownloader {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for the URL
+        System.out.print("Enter the file URL to download: ");
+        String fileUrl = scanner.nextLine();
+
+        // Ask the user for the download location
+        System.out.print("Enter the directory to save the file: ");
+        String saveDirectory = scanner.nextLine();
+
+        // Extract the file name from URL
+        String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+
+        // Create the full path
+        String savePath = saveDirectory + File.separator + fileName;
+
+        // Start download
+        downloadFile(fileUrl, savePath);
+
+        scanner.close();
+    }
+
+    public static void downloadFile(String fileUrl, String savePath) {
+        try (BufferedInputStream in = new BufferedInputStream(new URL(fileUrl).openStream());
+             FileOutputStream fileOutputStream = new FileOutputStream(savePath)) {
+
+            byte[] dataBuffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
+                fileOutputStream.write(dataBuffer, 0, bytesRead);
+            }
+
+            System.out.println("Download completed: " + savePath);
+        } catch (IOException e) {
+            System.out.println("Error downloading file: " + e.getMessage());
+        }
+    }
+}*/
+
+ import java.io.*;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -22,3 +67,4 @@ public class FileDownloader {
         executor.shutdown(); // Shutdown the executor after all tasks finish
     }
 }
+
